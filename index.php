@@ -101,8 +101,7 @@
                     include "includes/database.php";
                     $query = "SELECT * FROM devices";
                     $device_list = mysqli_query($connect,$query);
-                    while ($row = mysqli_fetch_assoc($device_list)) {
-                        echo $row['file_path'];?>
+                    while ($row = mysqli_fetch_assoc($device_list)) {?>
                     <div class="col-md-4 col-sm-4">
                         <div class="courses-thumb courses-thumb-secondary">
                             <div class="courses-top">
@@ -122,7 +121,8 @@
                             </div>
 
                             <div class="courses-info">
-                                <a href="reg-detail.php" class="section-btn btn btn-primary btn-block">Read
+                                <a href="reg-detail.php?more=<?php echo $row['id']?> "
+                                    class="section-btn btn btn-primary btn-block">Read
                                     More</a>
                             </div>
                         </div>

@@ -59,6 +59,7 @@
                     echo "<td>$status</td>";
                     echo "<td><a href='tables.php?repaired=$device_id'>Repaired</a></td>";
                     echo "<td><a href='tables.php?pending=$device_id'>Pending</a></td>";
+                    echo "<td><a href='tables.php?delete=$device_id'>Delete</a></td>";
                     echo "<tr>";
                 }?>
             </tbody>
@@ -75,6 +76,13 @@
             if(isset($_GET['pending'])){
                 $get_id = $_GET['pending'];
                 $query = "UPDATE devices SET status = 'pending' WHERE id = $get_id";
+
+                $approve_device_query = mysqli_query($connect,$query);
+                // header("Location: tables.php");
+            }
+            if(isset($_GET['delete'])){
+               echo $get_id = $_GET['delete'];
+                $query = "DELETE FROM devices WHERE id = $get_id";
 
                 $approve_device_query = mysqli_query($connect,$query);
                 // header("Location: tables.php");

@@ -67,8 +67,8 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'Upload')
   }
   else
   {
-    $message = 'There is some error in the file upload. Please check the following error.<br>';
-    $message .= 'Error:' . $_FILES['file']['error'];
+    $message = 'There is some error in the file upload. Please check the following error. ';
+    // $message .= 'Error:' . $_FILES['file']['error'];
   }
 }
 $_SESSION['message'] = $message;

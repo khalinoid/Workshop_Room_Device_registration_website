@@ -48,7 +48,7 @@
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                 <li>
-                    <a href="../index.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                    <a href="../index.php"><i class="fa fa-fw fa-home"></i> Homepage</a>
                 </li>
 
             </ul>

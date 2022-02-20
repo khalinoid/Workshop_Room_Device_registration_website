@@ -7,6 +7,8 @@
     <title>Commercial Bank of Ethiopia | Registration page</title>
 
     <?php include "includes/header.php" ?>
+
+
     <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-nav-first">
             <li><a href="index.php">Home</a></li>
@@ -107,13 +109,23 @@
 
                     <div class="text-center">
                         <div class="card-footer">
-                            <button type="submit" name="submit" value="Upload"
+                            <button id="submit" type="submit" name="submit" value="Upload"
                                 class="submit btn btn-primary">Submit</button>
                         </div>
                     </div>
                 </form>
-                <?php echo $_SESSION['message'];?>
+                <?php// if(isset($_SESSION['message'])) echo $_SESSION['message'];?>
+
+
             </div>
         </div>
     </section>
     <?php include "includes/footer.php" ?>
+    <script>
+    $(document).ready(function() {
+
+        $("#submit").on('click', function() {
+            alert("<?php if(isset($_SESSION['message'])) echo $_SESSION['message'] ?>");
+        });
+    });
+    </script>
